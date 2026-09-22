@@ -1,0 +1,105 @@
+/* ============================================================
+   Corrêa Prado Advocacia — Landing Page
+   Folha de estilos própria (variáveis, tipografia, componentes).
+   Depende do Tailwind CSS (via CDN, ver index.html) para o
+   grid/flex/espaçamento utilitário; este arquivo cobre apenas
+   o que o Tailwind não resolve: paleta de marca, tema claro/escuro
+   e pequenos componentes (botões, cards, accordion, menu mobile).
+   ============================================================ */
+
+:root{
+  --bg:#faf8f4;
+  --bg-alt:#f1ecE3;
+  --surface:#ffffff;
+  --text:#1b1a17;
+  --text-muted:#5c574d;
+  --border:#e6e0d4;
+  /* --accent escurecido de #9c7a3f para #7c5f2d: o tom claro só passava em
+     ~3.76:1 sobre o fundo (abaixo dos 4.5:1 exigidos para texto pequeno).
+     O tom antigo vira --accent-strong, disponível para hover/estados de
+     destaque onde o contraste mínimo já não se aplica (ícones, elementos
+     grandes). */
+  --accent:#7c5f2d;
+  --accent-strong:#9c7a3f;
+  --navy:#12161f;
+  /* Verde do WhatsApp escurecido: o tom oficial (#1fae59) com texto/ícone
+     branco só dá ~2.9:1 de contraste — abaixo dos 4.5:1 (texto) e até dos
+     3:1 (ícone) exigidos. #0f7a42 com branco dá ~5.4:1; o hover, mais escuro
+     ainda, dá ~7.9:1. */
+  --whatsapp:#0f7a42;
+  --whatsapp-dark:#0c5e34;
+}
+
+/* Tema escuro automático (segue a preferência do sistema) */
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0c0e13;
+    --bg-alt:#12151d;
+    --surface:#161a23;
+    --text:#ece8df;
+    --text-muted:#a49d8d;
+    --border:#262b36;
+    --accent:#cba76a;
+    --accent-strong:#e0c188;
+    --navy:#f7f5f1;
+    /* mesmo par acessível do tema claro — o dourado claro do tema escuro já
+       passa em ~8.5:1 sobre o fundo escuro, então só o verde precisava de
+       ajuste (era ~2.3:1 com texto branco). */
+    --whatsapp:#0f7a42;
+    --whatsapp-dark:#0c5e34;
+  }
+}
+
+/* Tema escuro forçado via atributo (ex.: toggle manual no futuro) */
+:root[data-theme="dark"]{
+  --bg:#0c0e13;
+  --bg-alt:#12151d;
+  --surface:#161a23;
+  --text:#ece8df;
+  --text-muted:#a49d8d;
+  --border:#262b36;
+  --accent:#cba76a;
+  --accent-strong:#e0c188;
+  --navy:#f7f5f1;
+  --whatsapp:#0f7a42;
+  --whatsapp-dark:#0c5e34;
+}
+
+body{ background:var(--bg); color:var(--text); font-family:'Inter',ui-sans-serif,system-ui,sans-serif; }
+h1,h2,h3,.serif{ font-family:'Playfair Display',ui-serif,Georgia,serif; }
+
+.surface{ background:var(--surface); }
+.bg-alt{ background:var(--bg-alt); }
+.text-muted{ color:var(--text-muted); }
+.border-soft{ border-color:var(--border); }
+.accent{ color:var(--accent); }
+.bg-accent{ background:var(--accent); }
+
+.btn-navy{ background:var(--navy); color:var(--bg); }
+.btn-navy:hover{ opacity:.88; }
+
+.btn-whatsapp{ background:var(--whatsapp); color:#fff; }
+.btn-whatsapp:hover{ background:var(--whatsapp-dark); }
+
+.card{ background:var(--surface); border:1px solid var(--border); }
+
+/* Accordion (FAQ) */
+details > summary{ list-style:none; cursor:pointer; }
+details > summary::-webkit-details-marker{ display:none; }
+details[open] .chev{ transform:rotate(45deg); }
+.chev{ transition:transform .2s ease; }
+
+.fade-line{ background:linear-gradient(90deg, var(--accent), transparent); height:2px; width:56px; }
+
+/* Links do menu principal */
+.nav-link{ transition:color .2s ease; }
+.nav-link:hover{ color:var(--accent); }
+
+/* Menu mobile (abre/fecha via script.js) */
+#mobile-menu{ max-height:0; overflow:hidden; transition:max-height .25s ease; }
+#mobile-menu.open{ max-height:320px; }
+
+/* Corrige o divisor do FAQ: a classe "divide-soft" usada antes não existe
+   (nem é utilitário do Tailwind nem estava definida aqui), então a linha
+   entre perguntas herdava a cor do texto em vez do bege suave pretendido. */
+#faq-list > * + *{ border-color:var(--border); }
