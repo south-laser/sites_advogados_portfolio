@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Advogado Trabalhista</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;600;800&family=Manrope:wght@400;600&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#09090c;--ink:#f3f1ec;--mute:#9a9aa3;--brass:#c8a560;--mx:0;--my:0;--sx:70%;--sy:40%;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,sans-serif;overflow-x:hidden}
+.hero{position:relative;min-height:100%;height:100vh;min-height:640px;overflow:hidden;isolation:isolate;display:grid;background:radial-gradient(60% 70% at var(--sx) var(--sy),rgba(200,165,96,.16),transparent 70%),var(--bg);animation:fade 1.2s ease both}
+.hero::after{content:"";position:absolute;inset:0;z-index:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 1px,transparent 1px 12.5%);pointer-events:none}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+nav{position:absolute;top:max(28px,env(safe-area-inset-top));left:6vw;right:6vw;z-index:5;display:flex;align-items:center;gap:44px}
+.logo{font-family:Unbounded;font-weight:800;font-size:1.05rem;letter-spacing:.02em;color:var(--ink);text-decoration:none}
+.logo i{color:var(--brass);font-style:normal}
+nav ul{display:flex;gap:30px;list-style:none;padding:0}
+nav a{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-decoration:none;position:relative;padding:6px 0}
+nav ul a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--brass);transform:scaleX(0);transform-origin:right;transition:transform .45s cubic-bezier(.7,0,.2,1)}
+nav ul a:hover::after,nav ul a:focus-visible::after{transform:scaleX(1);transform-origin:left}
+nav .tools{margin-left:auto;display:flex;gap:20px}
+nav .tools svg{width:17px;height:17px;stroke:var(--ink);fill:none;stroke-width:1.5;transition:transform .35s,stroke .35s}
+nav .tools a:hover svg{transform:translateY(-2px);stroke:var(--brass)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offset:4px}
+.title{position:absolute;z-index:1;left:6vw;top:50%;transform:translate3d(calc(var(--mx)*-14px),calc(-50% + var(--my)*-8px),0);font-family:Unbounded;font-weight:800;font-size:clamp(1.9rem,4.7vw,4.6rem);line-height:1.08;letter-spacing:-.01em;text-transform:uppercase;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.ln{display:block;overflow:hidden;padding:.04em 0}
+.ln span{display:block;opacity:0;filter:blur(8px);transform:translateY(110%);animation:up 1.2s cubic-bezier(.2,.8,.2,1) forwards}
+.ln:nth-child(1) span{animation-delay:.35s}.ln:nth-child(2) span{animation-delay:.5s}.ln:nth-child(3) span{animation-delay:.65s}
+@keyframes up{to{transform:none;opacity:1;filter:blur(0)}}
+.ln.o span{font-family:Syncopate,Unbounded,sans-serif;font-weight:700;font-size:.9em;letter-spacing:.03em;color:transparent;-webkit-text-stroke:1px #f3f1ec;stroke-linejoin:round;animation:up 1.2s cubic-bezier(.2,.8,.2,1) .35s forwards,pulse 6s ease-in-out 2s infinite}
+
+.lead{margin-top:28px;max-width:34ch;font-size:.95rem;line-height:1.6;color:var(--mute);text-transform:none;font-family:Manrope;font-weight:400;letter-spacing:0;opacity:0;animation:rise 1.2s 1.1s cubic-bezier(.2,.8,.2,1) forwards}
+.cta{display:inline-flex;align-items:center;gap:14px;margin-top:26px;padding:15px 26px;border:1px solid var(--brass);color:var(--ink);font:600 .72rem Manrope;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;position:relative;overflow:hidden;opacity:0;animation:rise 1.2s 1.3s cubic-bezier(.2,.8,.2,1) forwards;transition:color .45s}
+.cta::before{content:"";position:absolute;inset:0;background:var(--brass);transform:translateY(101%);transition:transform .5s cubic-bezier(.7,0,.2,1);z-index:-1}
+.cta:hover{color:#09090c}.cta:hover::before{transform:none}
+.cta{z-index:0}
+.photo{position:absolute;z-index:2;bottom:0;left:50%;width:clamp(300px,40vw,600px);transform:translate3d(calc(var(--mx)*18px),calc(var(--my)*8px),0);transition:transform .6s cubic-bezier(.2,.7,.2,1);pointer-events:none;animation:float 8s ease-in-out 2s infinite}
+.photo img{display:block;width:70%;height:auto;filter:drop-shadow(0 0 40px rgba(200,165,96,.22)) drop-shadow(0 30px 40px rgba(0,0,0,.6));clip-path:inset(100% 0 0 0);opacity:0;animation:reveal 1.5s .2s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes reveal{to{clip-path:inset(0);opacity:1}}
+.photo::after{content:"";position:absolute;left:0;right:0;bottom:0;height:18%;background:linear-gradient(transparent,var(--bg));}
+.feat{position:absolute;z-index:3;bottom:max(40px,env(safe-area-inset-bottom));left:6vw;display:flex;gap:clamp(28px,6vw,90px);opacity:0;animation:rise 1.2s 1.5s cubic-bezier(.2,.8,.2,1) forwards}
+.feat div{max-width:200px}
+.feat svg{width:14px;height:14px;stroke:var(--ink);stroke-width:2.4;margin-bottom:12px;transition:transform .6s cubic-bezier(.2,.8,.2,1),stroke .3s}
+.feat div:hover svg{transform:rotate(180deg);stroke:var(--brass)}
+.feat b{display:block;font:600 .8rem Manrope;margin-bottom:5px}
+.feat small{font-size:.72rem;color:var(--mute);line-height:1.5}
+.side{position:absolute;z-index:3;right:3vw;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font-family:Unbounded;font-weight:300;font-size:.85rem;letter-spacing:.3em;text-transform:uppercase;color:transparent;-webkit-text-stroke:1px var(--ink);text-decoration:none;opacity:0;animation:rise 1.2s 1.7s cubic-bezier(.2,.8,.2,1) forwards;transition:-webkit-text-stroke-color .3s}
+.side:hover{-webkit-text-stroke-color:var(--brass)}
+.sign{position:absolute;z-index:3;right:6vw;bottom:max(36px,env(safe-area-inset-bottom));font-family:Unbounded;font-weight:300;font-size:clamp(.85rem,1.5vw,1.3rem);color:transparent;-webkit-text-stroke:1px var(--ink);opacity:0;animation:rise 1.2s 1.8s cubic-bezier(.2,.8,.2,1) forwards;text-align:right;line-height:1.2}
+@keyframes rise{from{opacity:0;translate:0 26px;filter:blur(6px)}to{opacity:1;translate:0 0;filter:blur(0)}}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -12px}}
+@keyframes pulse{0%,100%{-webkit-text-stroke-color:#f3f1ec}50%{-webkit-text-stroke-color:#c8a560}}
+@keyframes drift{0%,100%{translate:0 0;opacity:.5}50%{translate:7vw -5vh;opacity:1}}
+@keyframes spin{to{rotate:360deg}}
+.hero::before{content:"";position:absolute;z-index:0;width:46vw;height:46vw;left:-8vw;bottom:-18vw;border-radius:50%;background:radial-gradient(closest-side,rgba(200,165,96,.14),transparent);animation:drift 14s ease-in-out infinite;pointer-events:none}
+.x{position:absolute;z-index:0;width:14px;height:14px;opacity:0;animation:fade 2s 2s forwards,spin 24s linear infinite;pointer-events:none}
+.x::before,.x::after{content:"";position:absolute;left:50%;top:0;width:1px;height:100%;background:var(--mute);rotate:45deg}
+.x::after{rotate:-45deg}
+.x.a{left:46%;top:22%}.x.b{left:18%;top:78%;animation-duration:2s,32s}.x.c{right:12%;top:30%;animation-duration:2s,40s}
+section{position:relative;padding:clamp(80px,12vw,160px) 6vw;border-top:1px solid rgba(243,241,236,.1);overflow:hidden;background:var(--bg)}
+.h2{font-family:Unbounded;font-weight:800;font-size:clamp(1.5rem,3.4vw,3rem);line-height:1.12;text-transform:uppercase;max-width:15ch;letter-spacing:-.01em}
+.h2 .o{display:block;font-family:Syncopate,Unbounded,sans-serif;font-weight:700;font-size:.9em;color:transparent;-webkit-text-stroke:1px #f3f1ec;letter-spacing:.03em}
+.sub{color:var(--mute);max-width:44ch;line-height:1.7;margin-top:22px;font-size:.95rem}
+.js .rv{opacity:0;transform:translateY(28px);filter:blur(6px);transition:opacity 1.1s,transform 1.1s cubic-bezier(.2,.8,.2,1),filter 1.1s;transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none;filter:none}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:6vw;align-items:start}
+.list{list-style:none;padding:0}
+.list li{display:grid;grid-template-columns:30px 1fr;padding:26px 0;border-bottom:1px solid rgba(243,241,236,.14);position:relative;transition:padding-left .5s cubic-bezier(.2,.8,.2,1)}
+.list li::before{content:'✕';font-size:.8rem;line-height:1.7;transition:transform .7s cubic-bezier(.2,.8,.2,1),color .3s}
+.list li::after{content:'';position:absolute;left:0;bottom:-1px;height:1px;width:100%;background:var(--brass);transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.7,0,.2,1)}
+.list li:hover{padding-left:14px}.list li:hover::after{transform:scaleX(1)}
+.list li:hover::before{transform:rotate(180deg);color:var(--brass)}
+.list b{display:block;font:600 1.05rem Manrope;margin-bottom:6px}
+.list small{color:var(--mute);font-size:.88rem;line-height:1.55}
+.cols{display:grid;grid-template-columns:1fr 1fr;column-gap:6vw;margin-top:56px}
+.mq{overflow:hidden;margin:0 -6vw 70px}
+.track{display:flex;width:max-content;animation:mq 40s linear infinite}
+.track span{font:700 clamp(1.8rem,5.5vw,4.5rem) Syncopate,Unbounded,sans-serif;text-transform:uppercase;color:transparent;-webkit-text-stroke:1px rgba(243,241,236,.55);padding-right:3rem;white-space:nowrap}
+.track span::after{content:'✕';font-size:.4em;margin-left:3rem;-webkit-text-stroke:0;color:var(--brass);vertical-align:middle}
+@keyframes mq{to{transform:translateX(-50%)}}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:60px}
+.st{padding:28px 24px 0 0;border-top:1px solid rgba(243,241,236,.18);position:relative}
+.st::before{content:'';position:absolute;top:-1px;left:0;height:1px;width:100%;background:var(--brass);transform:scaleX(0);transform-origin:left;transition:transform 1.4s cubic-bezier(.2,.8,.2,1) var(--d,0s)}
+.st.in::before{transform:scaleX(1)}
+.st i{display:block;font:700 2rem Syncopate,Unbounded,sans-serif;font-style:normal;color:transparent;-webkit-text-stroke:1px var(--ink);margin-bottom:18px}
+.st b{display:block;font:600 1rem Manrope;margin-bottom:8px}
+.st p{color:var(--mute);font-size:.88rem;line-height:1.6;max-width:28ch}
+.pf{position:relative;aspect-ratio:4/5;max-width:460px;border:1px solid rgba(243,241,236,.16);background:radial-gradient(70% 60% at 50% 38%,rgba(200,165,96,.2),transparent 72%);overflow:hidden}
+.pf img{position:absolute;bottom:0;left:50%;width:94%;transform:translateX(-50%);filter:drop-shadow(0 20px 30px rgba(0,0,0,.6))}
+.pf::after{content:'';position:absolute;inset:14px;border:1px solid rgba(200,165,96,.35);pointer-events:none;transition:inset .6s cubic-bezier(.2,.8,.2,1)}
+.pf:hover::after{inset:6px}
+form{display:grid;gap:26px}
+label{display:block;font-size:.8rem;color:var(--mute);margin-bottom:8px}
+input,textarea{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(243,241,236,.25);color:var(--ink);font:400 1rem Manrope;padding:8px 0 12px;border-radius:0;transition:border-color .4s;resize:vertical}
+input:focus,textarea:focus{outline:none;border-color:var(--brass)}
+button.cta{background:none;cursor:pointer;justify-self:start;opacity:1;animation:none}
+#fs{font-size:.85rem;color:var(--brass);min-height:1.2em}
+.foot{padding:40px 6vw max(40px,env(safe-area-inset-bottom));border-top:1px solid rgba(243,241,236,.1);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;color:var(--mute);font-size:.75rem;line-height:1.6}
+.foot p{max-width:60ch}
+@media(max-width:860px){.two{grid-template-columns:1fr}.cols{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr;row-gap:44px}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;filter:none}.track{animation:none}.st::before{transform:none}}
+@media(max-width:860px){
+ nav ul{display:none}
+ .hero{height:auto;min-height:100svh;display:flex;flex-direction:column}
+ .title{position:relative;left:auto;top:auto;transform:none!important;margin:110px 6vw 0;font-size:clamp(1.7rem,8.2vw,3rem)}
+ .lead{font-size:.9rem}
+ .photo{position:relative;left:auto;bottom:auto;margin:-20px auto 0;width:min(88vw,420px);transform:none!important;margin-top:auto}
+ .feat{position:relative;left:auto;bottom:auto;margin:0 6vw 24px;flex-wrap:wrap;gap:20px}
+ .side,.sign{display:none}
+ .hero{padding-bottom:0}
+}
+@media (prefers-color-scheme:light){:root{--bg:#09090c}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition:none!important}.ln span,.lead,.cta,.feat,.side,.sign{opacity:1;transform:none}.photo img{clip-path:none;opacity:1}}
+</style><script>document.documentElement.classList.add('js')</script></head>
+<body>
+<header class="hero" id="hero">
+ <i class="x a"></i><i class="x b"></i><i class="x c"></i>
+ <nav>
+  <a class="logo" href="#hero">ADVOGADO<i>.</i></a>
+  <ul><li><a href="#areas">Áreas</a></li><li><a href="#direitos">Direitos</a></li><li><a href="#atuacao">Atuação</a></li><li><a href="#sobre">Sobre</a></li><li><a href="#contato">Contato</a></li></ul>
+  <div class="tools"><a href="#contato" aria-label="Agendar conversa"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.5-4 3-6 6.5-6s6 2 6.500 6M18 6v6M21 9h-6"/></svg></a><a href="#busca" aria-label="Buscar"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.200-4.200"/></svg></a></div>
+ </nav>
+
+ <div class="title">
+  <h1 style="font:inherit;letter-spacing:inherit">
+  <span class="ln o"><span>Defenda</span></span>
+  <span class="ln"><span>seus direitos</span></span>
+  <span class="ln"><span>no trabalho</span></span>
+  </h1>
+  <p class="lead">Advocacia trabalhista com análise honesta do seu caso, do primeiro contato até a sentença.</p>
+  <a class="cta" href="#contato">Falar com o advogado</a>
+ </div>
+
+ <div class="photo"><img alt="Guilherme, advogado trabalhista" src="https://www.pngkey.com/png/full/255-2557779_harvey-specter-first-impression-quote.png"></div>
+
+ <div class="feat">
+  <div><svg viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1 1 13"/></svg><b>Análise do seu caso</b><small>Rescisão, horas extras, vínculo e verbas devidas.</small></div>
+  <div><svg viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1 1 13"/></svg><b>Atuação do início ao fim</b><small>Negociação, audiência e recurso, com você informado.</small></div>
+ </div>
+ <a class="side" href="#contato">Contato</a>
+ <div class="sign">Advocacia<br>Trabalhista</div>
+</header>
+<main>
+<section id='areas'>
+<h2 class='h2 rv'><span class='o'>Áreas</span>de atuação</h2>
+<p class='sub rv' style='--d:.1s'>Questões do dia a dia de quem trabalha, explicadas em linguagem direta.</p>
+<ul class='list cols rv' style='--d:.15s'>
+<li><div><b>Verbas rescisórias</b><small>Acerto após a demissão, com o cálculo conferido item a item.</small></div></li>
+<li><div><b>Horas extras e banco de horas</b><small>Jornada acima do combinado, adicionais e compensações.</small></div></li>
+<li><div><b>Reconhecimento de vínculo</b><small>Trabalho sem carteira assinada ou registrado de forma incorreta.</small></div></li>
+<li><div><b>Rescisão indireta</b><small>Quando o empregador descumpre o contrato e a saída é por culpa dele.</small></div></li>
+<li><div><b>Acidente e doença do trabalho</b><small>Estabilidade, indenização e orientação sobre o afastamento.</small></div></li>
+<li><div><b>Assédio moral e sexual</b><small>Situações que atingem a dignidade e a saúde no ambiente de trabalho.</small></div></li>
+</ul>
+</section>
+<section id='direitos'>
+<div class='mq' aria-hidden='true'><div class='track'><span>FGTS</span><span>13º salário</span><span>Férias</span><span>Horas extras</span><span>Aviso prévio</span><span>Adicional noturno</span><span>FGTS</span><span>13º salário</span><span>Férias</span><span>Horas extras</span><span>Aviso prévio</span><span>Adicional noturno</span></div></div>
+<div class='two'>
+<div><h2 class='h2 rv'><span class='o'>Direitos</span>quando vale conversar</h2><p class='sub rv' style='--d:.1s'>Se alguma destas situações é familiar, vale entender o que a lei prevê para o seu caso.</p></div>
+<ul class='list rv' style='--d:.15s'>
+<li><div><b>Carteira não assinada</b><small>Rotina, horários e ordens de um empregado, sem o registro.</small></div></li>
+<li><div><b>Horas extras sem pagamento</b><small>Trabalho além da jornada sem o adicional devido.</small></div></li>
+<li><div><b>Demissão sem acerto correto</b><small>Verbas atrasadas, incompletas ou nunca pagas.</small></div></li>
+<li><div><b>FGTS sem depósito</b><small>Meses faltando no extrato da sua conta.</small></div></li>
+<li><div><b>Pressão e humilhação no trabalho</b><small>Tratamento que afeta sua saúde e sua rotina.</small></div></li>
+</ul>
+</div>
+</section>
+<section id='atuacao'>
+<h2 class='h2 rv'><span class='o'>Atuação</span>do início ao fim</h2>
+<div class='steps'>
+<div class='st rv'><i>01</i><b>Conversa inicial</b><p>Você conta o que aconteceu e eu explico, sem juridiquês, quais caminhos existem.</p></div>
+<div class='st rv' style='--d:.15s'><i>02</i><b>Análise dos documentos</b><p>Carteira, holerites, contrato e mensagens organizam a história do caso.</p></div>
+<div class='st rv' style='--d:.3s'><i>03</i><b>Caminho definido</b><p>Negociação ou ação trabalhista, conforme o que fizer mais sentido para você.</p></div>
+<div class='st rv' style='--d:.45s'><i>04</i><b>Acompanhamento</b><p>Você recebe atualizações a cada etapa, da audiência até o encerramento.</p></div>
+</div>
+</section>
+<section id='sobre'>
+<div class='two'>
+<div class='pf rv'><img id='about-img' alt='Guilherme, advogado trabalhista'></div>
+<div><h2 class='h2 rv'><span class='o'>Sobre</span>Guilherme, advogado trabalhista</h2>
+<p class='sub rv' style='--d:.1s'>Atuo na defesa de trabalhadores em questões de Direito do Trabalho, com atendimento direto e linguagem clara.</p>
+<p class='sub rv' style='--d:.2s'>Cada caso começa por ouvir você e entender o que está em jogo, antes de qualquer decisão.</p></div>
+</div>
+</section>
+<section id='contato'>
+<div class='two'>
+<div><h2 class='h2 rv'><span class='o'>Contato</span>conte o que aconteceu</h2><p class='sub rv' style='--d:.1s'>Descreva sua situação em poucas linhas. A conversa continua pelo WhatsApp.</p></div>
+<form class='rv' style='--d:.15s' id='cf'>
+<div><label for='n'>Seu nome</label><input id='n' required autocomplete='name'></div>
+<div><label for='t'>Seu WhatsApp</label><input id='t' type='tel' required autocomplete='tel'></div>
+<div><label for='m'>O que aconteceu</label><textarea id='m' rows='4' required></textarea></div>
+<button class='cta' type='submit'>Enviar pelo WhatsApp</button>
+<div id='fs' role='status'></div>
+</form>
+</div>
+</section>
+</main>
+<footer class='foot'><a class='logo' href='#hero'>ADVOGADO<i>.</i></a><p>Este site tem caráter informativo, conforme o Código de Ética e Disciplina da OAB, e não promete resultados. Cada caso depende de suas circunstâncias.</p></footer>
+<script>
+(function(){
+ var h=document.getElementById('hero'),tx=0,ty=0,cx=0,cy=0,run=false;
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ h.addEventListener('pointermove',function(e){
+  var r=h.getBoundingClientRect();
+  tx=(e.clientX-r.left)/r.width-.5;ty=(e.clientY-r.top)/r.height-.5;
+  h.style.setProperty('--sx',(tx+.5)*100+'%');h.style.setProperty('--sy',(ty+.5)*100+'%');
+  if(!run){run=true;requestAnimationFrame(loop)}
+ });
+ h.addEventListener('pointerleave',function(){tx=0;ty=0;h.style.setProperty('--sx','70%');h.style.setProperty('--sy','40%')});
+ function loop(){
+  cx+=(tx-cx)*.08;cy+=(ty-cy)*.08;
+  h.style.setProperty('--mx',cx.toFixed(3));h.style.setProperty('--my',cy.toFixed(3));
+  if(Math.abs(tx-cx)>.001||Math.abs(ty-cy)>.001)requestAnimationFrame(loop);else run=false;
+ }
+})();
+</script>
+<script>
+(function(){
+var WA='';/* número com DDI e DDD, ex.: 5551999999999 */
+var s=document.querySelector('.photo img'),t=document.getElementById('about-img');if(s&&t)t.src=s.src;
+var els=document.querySelectorAll('.rv');
+if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')})}else{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});els.forEach(function(e){io.observe(e)})}
+document.getElementById('cf').addEventListener('submit',function(ev){ev.preventDefault();var fs=document.getElementById('fs');
+if(!WA){fs.textContent='Canal de WhatsApp ainda não configurado.';return}
+var txt='Olá, sou '+document.getElementById('n').value+' ('+document.getElementById('t').value+'). '+document.getElementById('m').value;
+window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(txt),'_blank','noopener');fs.textContent='Abrindo o WhatsApp.'});
+})();
+</script>
+</body></html>
