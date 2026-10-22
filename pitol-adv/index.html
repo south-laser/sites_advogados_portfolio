@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101b2b" />
+  <meta name="description" content="Pitol Advocacia, atuação em Direito Previdenciário e Trabalhista. Orientação jurídica em Chiapetta/RS." />
+  <title>Pitol Advocacia | Direito Previdenciário e Trabalhista</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#101b2b;--navy2:#17263a;--gold:#c9a86a;--cream:#f5f2ec;--ink:#172235;--muted:#687384;--white:#fff;--line:rgba(255,255,255,.14)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;font-family:"DM Sans",sans-serif;color:var(--ink);background:#fff}a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}.container{width:min(1160px,calc(100% - 44px));margin:auto}
+    .topline{height:4px;background:linear-gradient(90deg,var(--gold),#f0dfb9,var(--gold))}
+    header{position:sticky;top:0;z-index:20;background:rgba(16,27,43,.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08);color:#fff}
+    .nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:25px}.brand{display:flex;align-items:center;gap:13px}.brand-mark{width:43px;height:43px;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold);font:700 20px Manrope, sans-serif;transform:rotate(45deg)}.brand-mark span{transform:rotate(-45deg)}.brand-name{font:800 17px Manrope,sans-serif;letter-spacing:.13em}.brand-sub{display:block;font-size:9px;letter-spacing:.23em;color:#c8ced6;margin-top:4px}.nav-links{display:flex;align-items:center;gap:29px;font-size:13px;color:#e2e6eb}.nav-links a{transition:color .2s}.nav-links a:hover{color:var(--gold)}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 19px;background:var(--gold);color:#111b29;border:1px solid var(--gold);font-weight:700;font-size:12px;letter-spacing:.04em;transition:transform .25s,background .25s}.nav-cta:hover,.btn:hover{transform:translateY(-2px);background:#ddc18b}.menu-toggle{display:none;background:none;border:0;color:white;font-size:25px}
+    .hero{background:var(--navy);color:white;position:relative;overflow:hidden;min-height:690px;display:flex;align-items:center}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,27,43,.98) 0%,rgba(16,27,43,.92) 46%,rgba(16,27,43,.25) 100%),url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=2000&q=85') center/cover}.hero:after{content:"";position:absolute;width:530px;height:530px;border:1px solid rgba(201,168,106,.25);border-radius:50%;right:-110px;top:80px;box-shadow:0 0 0 45px rgba(201,168,106,.035),0 0 0 90px rgba(201,168,106,.025)}.hero-inner{position:relative;z-index:1;padding:100px 0 112px;max-width:760px}.eyebrow{display:flex;align-items:center;gap:12px;color:var(--gold);font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700}.eyebrow:before{content:"";width:34px;height:1px;background:var(--gold)}h1,h2,h3{font-family:Manrope,sans-serif}h1{font-size:clamp(43px,6.3vw,76px);line-height:1.04;letter-spacing:-.055em;margin:26px 0 25px;max-width:760px}h1 em{font-style:normal;color:var(--gold)}.hero-copy{font-size:17px;line-height:1.8;color:#d2d8df;max-width:550px;margin:0 0 34px}.hero-actions{display:flex;gap:14px;flex-wrap:wrap}.btn-outline{display:inline-flex;align-items:center;justify-content:center;padding:14px 19px;border:1px solid rgba(255,255,255,.35);color:#fff;font-size:12px;font-weight:700;transition:border .2s,background .2s}.btn-outline:hover{border-color:var(--gold);background:rgba(255,255,255,.05)}.hero-note{margin-top:55px;display:flex;align-items:center;gap:14px;color:#bdc6d0;font-size:12px}.hero-note .line{height:1px;width:42px;background:var(--gold)}.hero-note strong{color:white;font-weight:600}
+    .trust-strip{background:var(--cream);padding:25px 0}.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.trust-item{display:flex;align-items:center;justify-content:center;gap:12px;color:#394456;font-size:12px;font-weight:700;letter-spacing:.035em;text-align:center}.trust-icon{color:#9d7a3d;font-size:20px}
+    section{padding:105px 0}.section-head{max-width:650px;margin-bottom:46px}.section-kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#9d7a3d;font-weight:800}.section-head h2{font-size:clamp(32px,4vw,48px);letter-spacing:-.045em;line-height:1.12;margin:16px 0}.section-head p{color:var(--muted);line-height:1.8;margin:0;font-size:15px}.about{display:grid;grid-template-columns:1fr .85fr;gap:90px;align-items:center}.about-visual{position:relative;min-height:470px;background:var(--navy);overflow:hidden}.about-visual img{width:100%;height:470px;object-fit:cover;opacity:.74}.visual-caption{position:absolute;bottom:22px;left:22px;right:22px;padding:20px;background:rgba(16,27,43,.92);color:white;border-left:3px solid var(--gold)}.visual-caption small{display:block;color:var(--gold);text-transform:uppercase;letter-spacing:.16em;font-size:9px;margin-bottom:7px}.visual-caption strong{font:600 18px Manrope}.about-copy h2{font-size:clamp(32px,4vw,45px);line-height:1.15;letter-spacing:-.04em;margin:15px 0 22px}.about-copy p{color:var(--muted);font-size:15px;line-height:1.9}.about-signature{display:flex;align-items:center;gap:14px;margin-top:27px;padding-top:23px;border-top:1px solid #e6e8eb}.signature-line{width:42px;height:2px;background:var(--gold)}.about-signature strong{display:block;font-family:Manrope;font-size:13px}.about-signature span{font-size:11px;color:var(--muted);display:block;margin-top:4px}
+    .areas{background:var(--cream)}.areas .section-head{text-align:center;margin:0 auto 50px}.areas-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.area-card{background:#fff;padding:38px 36px;border:1px solid #e7e2d8;position:relative;transition:transform .3s,box-shadow .3s}.area-card:hover{transform:translateY(-6px);box-shadow:0 22px 55px rgba(22,34,53,.09)}.area-number{font:700 12px Manrope;color:#9d7a3d;letter-spacing:.16em}.area-icon{width:55px;height:55px;border:1px solid #dfd2b9;color:#9d7a3d;display:grid;place-items:center;font-size:25px;margin:25px 0}.area-card h3{font-size:25px;letter-spacing:-.03em;margin:0 0 14px}.area-card p{font-size:14px;line-height:1.8;color:var(--muted);margin:0 0 24px}.service-list{display:grid;grid-template-columns:1fr 1fr;gap:12px 18px;padding:0;margin:0 0 29px;list-style:none}.service-list li{font-size:12px;line-height:1.5;color:#3e4a5a;display:flex;gap:9px}.service-list li:before{content:"+";color:#a38247;font-weight:800}.text-link{display:inline-flex;gap:10px;align-items:center;color:#876a38;font-size:12px;font-weight:800;letter-spacing:.05em}.text-link:hover{gap:15px}
+    .approach{background:var(--navy);color:white;position:relative;overflow:hidden}.approach:after{content:"P";position:absolute;right:5%;top:-140px;font:800 500px Manrope;color:rgba(255,255,255,.025);pointer-events:none}.approach-inner{position:relative;z-index:1;display:grid;grid-template-columns:.8fr 1fr;gap:90px;align-items:start}.approach .section-head{margin:0}.approach .section-head h2{color:white}.approach .section-head p{color:#b8c1cc}.values{display:grid;grid-template-columns:1fr 1fr;gap:28px}.value{border-top:1px solid rgba(255,255,255,.2);padding-top:20px}.value .num{color:var(--gold);font-size:11px;letter-spacing:.12em}.value h3{font-size:17px;margin:13px 0 8px}.value p{font-size:13px;line-height:1.8;color:#b8c1cc;margin:0}
+    .contact{background:#fff}.contact-grid{display:grid;grid-template-columns:.85fr 1fr;gap:90px}.contact-info h2{font-size:clamp(34px,4vw,48px);letter-spacing:-.05em;line-height:1.1;margin:15px 0 20px}.contact-info>p{color:var(--muted);font-size:14px;line-height:1.8}.contact-detail{display:flex;gap:15px;margin-top:27px;align-items:flex-start}.contact-detail .ico{width:42px;height:42px;background:var(--cream);display:grid;place-items:center;color:#9d7a3d;flex-shrink:0}.contact-detail small{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:5px}.contact-detail strong{font-size:13px;line-height:1.6;overflow-wrap:anywhere}.contact-form{padding:35px;background:var(--cream)}.contact-form h3{font-size:23px;margin:0 0 8px}.contact-form>p{font-size:13px;color:var(--muted);margin:0 0 25px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{margin-bottom:15px}.field label{display:block;font-size:11px;font-weight:700;color:#384355;margin-bottom:8px}.field input,.field textarea,.field select{width:100%;padding:13px 14px;border:1px solid #ddd9d1;background:white;outline:none;font-size:13px;color:var(--ink);transition:border .2s}.field input:focus,.field textarea:focus,.field select:focus{border-color:#b5965d}.field textarea{min-height:110px;resize:vertical}.contact-form .btn{width:100%;cursor:pointer}.form-note{font-size:10px;color:#747e8b;line-height:1.6;margin-top:13px}
+    footer{background:#0b1421;color:#c2cad3;padding:30px 0}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}.footer-brand{font:700 13px Manrope;letter-spacing:.14em;color:white}.footer-copy{font-size:11px;color:#8793a1}.footer-links{display:flex;gap:20px;font-size:11px}.footer-links a:hover{color:var(--gold)}.whatsapp{position:fixed;right:22px;bottom:22px;z-index:30;width:55px;height:55px;border-radius:50%;display:grid;place-items:center;background:#218b61;color:white;box-shadow:0 10px 30px #0003;font-size:25px;transition:transform .2s}.whatsapp:hover{transform:translateY(-4px) scale(1.04)}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}.reveal.is-visible{opacity:1;transform:translateY(0)}.delay-1{transition-delay:.12s}.delay-2{transition-delay:.22s}.delay-3{transition-delay:.32s}
+    @media(max-width:850px){.nav-links{gap:16px}.nav-links a:not(.nav-cta){display:none}.nav{height:72px}.hero{min-height:620px}.about,.approach-inner,.contact-grid{grid-template-columns:1fr;gap:45px}.about-visual{order:2;min-height:350px}.about-visual img{height:350px}.about-copy{order:1}.approach-inner{gap:45px}.contact-grid{gap:40px}.about{gap:30px}.trust-grid{grid-template-columns:1fr;gap:15px}.trust-item{justify-content:flex-start}.approach:after{font-size:350px;top:0}.footer-inner{flex-wrap:wrap}}
+    @media(max-width:600px){.container{width:min(100% - 32px,1160px)}.nav-cta{padding:11px 12px;font-size:10px}.brand-name{font-size:14px}.brand-mark{width:37px;height:37px}.hero-inner{padding:85px 0 75px}h1{font-size:45px}.hero-copy{font-size:15px}.hero-note{margin-top:38px}.hero:after{width:300px;height:300px;right:-160px;top:130px}section{padding:75px 0}.areas-grid{grid-template-columns:1fr}.area-card{padding:30px 24px}.service-list{grid-template-columns:1fr 1fr;gap:10px}.values{gap:24px 18px}.form-row{grid-template-columns:1fr;gap:0}.contact-form{padding:25px 20px}.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap}.whatsapp{width:49px;height:49px;right:15px;bottom:15px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header>
+    <div class="container nav">
+      <a href="#inicio" class="brand" aria-label="Pitol Advocacia, início">
+        <div class="brand-mark"><span>P</span></div>
+        <div><div class="brand-name">PITOL ADVOCACIA</div><span class="brand-sub">DIREITO &amp; COMPROMISSO</span></div>
+      </a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#sobre">O escritório</a><a href="#atuacao">Áreas de atuação</a><a href="#contato">Contato</a>
+        <a class="nav-cta" href="#contato">Fale com o advogado ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="eyebrow reveal">Pitol Advocacia · Chiapetta/RS</div>
+          <h1 class="reveal delay-1">Seus direitos merecem uma defesa <em>atenta.</em></h1>
+          <p class="hero-copy reveal delay-2">Atuação jurídica em Direito Previdenciário e Trabalhista, com orientação próxima, análise cuidadosa e compromisso com cada história.</p>
+          <div class="hero-actions reveal delay-3">
+            <a class="btn" href="#contato">CONVERSE COM O ESCRITÓRIO <span>↗</span></a>
+            <a class="btn-outline" href="#atuacao">Conheça as áreas de atuação</a>
+          </div>
+          <div class="hero-note reveal delay-3"><span class="line"></span><span><strong>Atendimento jurídico responsável</strong> · Clareza em cada etapa</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="container trust-grid">
+        <div class="trust-item"><span class="trust-icon">✦</span> Direito Previdenciário e Trabalhista</div>
+        <div class="trust-item"><span class="trust-icon">⌖</span> Chiapetta, Rio Grande do Sul</div>
+        <div class="trust-item"><span class="trust-icon">◷</span> Atendimento de segunda a sexta</div>
+      </div>
+    </div>
+
+    <section id="sobre">
+      <div class="container about">
+        <div class="about-visual reveal">
+          <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1000&q=85" alt="Livros jurídicos e símbolos do Direito" loading="lazy">
+          <div class="visual-caption"><small>Nosso compromisso</small><strong>Conhecimento jurídico. Atendimento humano.</strong></div>
+        </div>
+        <div class="about-copy reveal delay-1">
+          <div class="section-kicker">Sobre a Pitol Advocacia</div>
+          <h2>Orientação jurídica com seriedade e proximidade.</h2>
+          <p>Sediada em Chiapetta/RS, a Pitol Advocacia atua nas áreas de Direito Previdenciário e Direito do Trabalho, tanto na orientação preventiva quanto na condução de demandas administrativas e judiciais.</p>
+          <p>O escritório busca construir uma relação profissional baseada em ética, excelência técnica, atualização constante e atenção às necessidades de cada cliente.</p>
+          <p>O advogado Dionatan Rafael da Rosa Pitol é graduado em Direito pela UNIJUÍ e pós-graduado em Direito Previdenciário pela UNOPAR.</p>
+          <div class="about-signature"><div class="signature-line"></div><div><strong>Dionatan Rafael da Rosa Pitol</strong><span>Advogado · OAB/RS 89.861</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="areas" id="atuacao">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-kicker">Como podemos ajudar</div>
+          <h2>Atuação jurídica focada nos seus direitos.</h2>
+          <p>Cada situação tem suas particularidades. Conheça as áreas de atuação do escritório e entre em contato para avaliar o seu caso.</p>
+        </div>
+        <div class="areas-grid">
+          <article class="area-card reveal">
+            <div class="area-number">01 / PREVIDENCIÁRIO</div>
+            <div class="area-icon">⚖</div>
+            <h3>Direito Previdenciário</h3>
+            <p>Orientação sobre benefícios do INSS e regimes próprios, da análise inicial ao acompanhamento administrativo ou judicial, conforme as necessidades do caso.</p>
+            <ul class="service-list">
+              <li>Aposentadorias</li><li>Planejamento previdenciário</li><li>Benefícios por incapacidade</li><li>Pensão por morte</li><li>Benefício assistencial (BPC/LOAS)</li><li>Revisão de benefícios</li><li>Auxílio-acidente</li><li>Análise do CNIS</li><li>Aposentadoria rural</li><li>Acerto de contribuições</li>
+            </ul>
+            <a class="text-link" href="#contato">FALAR SOBRE MEU BENEFÍCIO <span>↗</span></a>
+          </article>
+          <article class="area-card reveal delay-1">
+            <div class="area-number">02 / TRABALHISTA</div>
+            <div class="area-icon">§</div>
+            <h3>Direito do Trabalho</h3>
+            <p>Assessoria e defesa dos direitos de trabalhadores em questões relacionadas ao contrato de trabalho, verbas e possíveis violações trabalhistas.</p>
+            <ul class="service-list">
+              <li>Horas extras</li><li>Verbas rescisórias</li><li>Vínculo empregatício</li><li>FGTS</li><li>Assédio moral</li><li>Adicionais legais</li><li>Férias e 13º salário</li><li>Rescisão indireta</li><li>Estabilidades</li><li>Acidente de trabalho</li>
+            </ul>
+            <a class="text-link" href="#contato">FALAR SOBRE MEU CASO <span>↗</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach">
+      <div class="container approach-inner">
+        <div class="section-head reveal">
+          <div class="section-kicker">Nossa forma de atuar</div>
+          <h2>Um atendimento que começa pela escuta.</h2>
+          <p>Entender o contexto é parte essencial de uma orientação jurídica responsável. O escritório busca conduzir cada atendimento com transparência, cuidado e atenção aos detalhes.</p>
+        </div>
+        <div class="values">
+          <div class="value reveal"><span class="num">01 / ESCUTA</span><h3>Entender sua história</h3><p>Espaço para compreender os fatos, as dúvidas e os documentos relacionados ao caso.</p></div>
+          <div class="value reveal delay-1"><span class="num">02 / ANÁLISE</span><h3>Avaliação cuidadosa</h3><p>Análise das informações disponíveis e dos caminhos jurídicos que podem ser pertinentes.</p></div>
+          <div class="value reveal delay-2"><span class="num">03 / CLAREZA</span><h3>Orientação transparente</h3><p>Explicação objetiva sobre possibilidades, etapas e aspectos relevantes do atendimento.</p></div>
+          <div class="value reveal delay-3"><span class="num">04 / COMPROMISSO</span><h3>Atuação responsável</h3><p>Condução profissional, ética e alinhada às particularidades de cada situação.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <div class="container contact-grid">
+        <div class="contact-info reveal">
+          <div class="section-kicker">Entre em contato</div>
+          <h2>Vamos conversar sobre a sua situação?</h2>
+          <p>Entre em contato com o escritório para solicitar informações ou agendar um atendimento. As particularidades do caso serão avaliadas individualmente.</p>
+          <div class="contact-detail"><div class="ico">⌖</div><div><small>Endereço</small><strong>Rua Cel. Raul Oliveira, nº 483<br>Chiapetta/RS · CEP 98760-000</strong></div></div>
+          <div class="contact-detail"><div class="ico">☎</div><div><small>Telefone / WhatsApp</small><strong><a href="https://wa.me/5555999865349" target="_blank" rel="noopener">(55) 99986-5349</a></strong></div></div>
+          <div class="contact-detail"><div class="ico">✉</div><div><small>E-mail</small><strong><a href="mailto:dionatanpitol@gmail.com">dionatanpitol@gmail.com</a></strong></div></div>
+          <div class="contact-detail"><div class="ico">◷</div><div><small>Horário de atendimento</small><strong>Segunda a sexta · 08h30 às 17h30</strong></div></div>
+        </div>
+        <form class="contact-form reveal delay-1" id="contactForm">
+          <h3>Envie sua mensagem</h3>
+          <p>Preencha os campos e continue a conversa pelo WhatsApp.</p>
+          <div class="form-row">
+            <div class="field"><label for="nome">Seu nome</label><input id="nome" name="nome" autocomplete="name" required placeholder="Como podemos chamar você?"></div>
+            <div class="field"><label for="telefone">Telefone</label><input id="telefone" name="telefone" autocomplete="tel" placeholder="(00) 00000-0000"></div>
+          </div>
+          <div class="field"><label for="assunto">Área de interesse</label><select id="assunto" name="assunto" required><option value="">Selecione uma opção</option><option>Direito Previdenciário</option><option>Direito Trabalhista</option><option>Outro assunto</option></select></div>
+          <div class="field"><label for="mensagem">Como podemos ajudar?</label><textarea id="mensagem" name="mensagem" required placeholder="Conte brevemente o motivo do contato. Evite incluir dados sensíveis neste formulário."></textarea></div>
+          <button class="btn" type="submit">CONTINUAR PELO WHATSAPP ↗</button>
+          <div class="form-note">O envio abrirá uma conversa no WhatsApp. Não serão enviados dados automaticamente antes de você confirmar a mensagem.</div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div><div class="footer-brand">PITOL ADVOCACIA</div><div class="footer-copy" style="margin-top:7px">Dionatan Rafael da Rosa Pitol · OAB/RS 89.861</div></div>
+      <div class="footer-copy">© <span id="year"></span> Pitol Advocacia. Todos os direitos reservados.</div>
+      <div class="footer-links"><a href="#inicio">Início ↑</a><a href="#atuacao">Atuação</a><a href="#contato">Contato</a></div>
+    </div>
+  </footer>
+  <a class="whatsapp" href="https://wa.me/5555999865349" target="_blank" rel="noopener" aria-label="Fale com a Pitol Advocacia pelo WhatsApp">✆</a>
+  <script>
+    // Fade-in progressivo conforme os elementos entram na área visível.
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -35px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // O formulário prepara a mensagem e abre o WhatsApp para o usuário confirmar o envio.
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const nome = document.getElementById('nome').value.trim();
+      const telefone = document.getElementById('telefone').value.trim();
+      const assunto = document.getElementById('assunto').value;
+      const mensagem = document.getElementById('mensagem').value.trim();
+      const texto = `Olá, Pitol Advocacia! Meu nome é ${nome}.${telefone ? ` Meu telefone é ${telefone}.` : ''}\nÁrea de interesse: ${assunto}.\nMensagem: ${mensagem}`;
+      window.open(`https://wa.me/5555999865349?text=${encodeURIComponent(texto)}`, '_blank', 'noopener');
+    });
+  </script>
+</body>
+</html>
