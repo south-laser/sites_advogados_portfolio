@@ -23,7 +23,7 @@ const fsp = require('node:fs/promises');
 const path = require('node:path');
 const crypto = require('node:crypto');
 
-const PORT = 3002;
+const PORT = Number(process.env.PORT) || 3000;
 const HOST = process.env.HOST || '127.0.0.1';
 const TRUST_PROXY = process.env.TRUST_PROXY === '1';
 
@@ -158,6 +158,7 @@ function varsFormulario({ plano, tipo, termos, csrf, erros, old }) {
       ? `<div class="err" role="alert"><ul>${erros.map((m) => `<li>${e(m)}</li>`).join('')}</ul></div>`
       : '',
     nome: old.nome,
+    email: old.email,
     telefone: old.telefone,
     cpf: old.cpf,
     termos_html: termos.map((t) => `<h3>${e(t.titulo)}</h3><p>${e(t.texto)}</p>`).join('\n        '),
@@ -166,13 +167,13 @@ function varsFormulario({ plano, tipo, termos, csrf, erros, old }) {
 
 /* ---------- contrato ---------- */
 
-function montaContrato({ tipo, plano, termos, nome, cpf, tel, ip, agora }) {
+function montaContrato({ tipo, plano, termos, nome, email, cpf, tel, ip, agora }) {
   let md = '# Contrato de Prestação de Serviços — South Laser\n\n';
   md += `**Aceite registrado em:** ${agora.data} às ${agora.hora} (America/Sao_Paulo)  \n`;
   md += `**IP do aceite:** ${ip}\n\n`;
 
   md += '## Contratante\n\n';
-  md += `- **Nome:** ${nome}\n- **CPF:** ${fmtCpf(cpf)}\n- **Telefone:** ${fmtTel(tel)}\n\n`;
+  md += `- **Nome:** ${nome}\n- **CPF:** ${fmtCpf(cpf)}\n- **Telefone:** ${fmtTel(tel)}\n- **E-mail:** ${email}\n\n`;
 
   md += '## Serviço contratado\n\n';
   md += `**${limpaLinha(plano.nome || tipo)}** (\`${tipo}\`)\n\n${plano.descricao || ''}\n\n`;
@@ -287,7 +288,7 @@ async function tratar(req, res) {
   if (!plano) return enviar(res, 404, await pagina('invalido.html', {}), cookie);
 
   const erros = [];
-  let old = { nome: '', telefone: '', cpf: '' };
+  let old = { nome: '', email: '', telefone: '', cpf: '' };
 
   if (req.method === 'POST') {
     if (!csrfIgual(csrf, form.get('csrf'))) {
@@ -295,11 +296,13 @@ async function tratar(req, res) {
     }
 
     const nome = limpaLinha(form.get('nome'));
+    const email = limpaLinha(form.get('email')).toLowerCase();
     const tel = soDigitos(form.get('telefone'));
     const cpf = soDigitos(form.get('cpf'));
-    old = { nome, telefone: String(form.get('telefone') ?? ''), cpf: String(form.get('cpf') ?? '') };
+    old = { nome, email, telefone: String(form.get('telefone') ?? ''), cpf: String(form.get('cpf') ?? '') };
 
     if (nome.length < 5 || nome.length > 120 || !nome.includes(' ')) erros.push('Informe seu nome completo.');
+    if (email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) erros.push('Informe um e-mail válido.');
     if (tel.length !== 10 && tel.length !== 11) erros.push('Informe um telefone válido com DDD.');
     if (!cpfValido(cpf)) erros.push('O CPF informado não é válido.');
     if (!form.get('aceite')) erros.push('Para continuar, aceite os termos e condições.');
@@ -312,7 +315,7 @@ async function tratar(req, res) {
       const ip = limpaLinha(ipBruto || req.socket.remoteAddress || 'desconhecido').slice(0, 64);
 
       try {
-        const md = montaContrato({ tipo, plano, termos, nome, cpf, tel, ip, agora });
+        const md = montaContrato({ tipo, plano, termos, nome, email, cpf, tel, ip, agora });
         const arquivo = await gravaContrato(cpf, md, agora.stamp);
         const codigo = crypto
           .createHash('sha256')

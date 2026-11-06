@@ -56,9 +56,9 @@ ul.no li::before{content:"×";position:absolute;left:4px;top:3px;color:var(--dan
 
 .field{margin-bottom:16px}
 label{display:block;font-weight:500;font-size:14px;margin-bottom:6px;color:var(--muted)}
-input[type=text],input[type=tel]{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;font:400 16px var(--f-body);background:var(--card2);color:var(--ink)}
-input[type=text]::placeholder,input[type=tel]::placeholder{color:#8d84ad}
-input[type=text]:focus,input[type=tel]:focus{border-color:var(--lilac);box-shadow:0 0 0 3px rgba(204,132,255,.28);outline:none}
+input[type=text],input[type=tel],input[type=email]{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;font:400 16px var(--f-body);background:var(--card2);color:var(--ink)}
+input[type=text]::placeholder,input[type=tel]::placeholder,input[type=email]::placeholder{color:#8d84ad}
+input[type=text]:focus,input[type=tel]:focus,input[type=email]:focus{border-color:var(--lilac);box-shadow:0 0 0 3px rgba(204,132,255,.28);outline:none}
 button:focus-visible,summary:focus-visible,.terms:focus-visible,.aceite input:focus-visible{outline:3px solid var(--lilac);outline-offset:2px}
 
 .terms{max-height:260px;overflow:auto;border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--card2);font-size:15px;color:#ddd6f0}
