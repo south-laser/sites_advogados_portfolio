@@ -1,0 +1,82 @@
+{
+  "_termos": [
+    {
+      "titulo": "1. Objeto",
+      "texto": "A SOUTH LASER SERVIÇOS DIGITAIS (\"CONTRATADA\") prestará ao CONTRATANTE os serviços descritos nesta página, nas condições, prazos e valores aqui informados."
+    },
+    {
+      "titulo": "2. Valor e pagamento",
+      "texto": "O CONTRATANTE pagará o valor indicado, na periodicidade informada. O atraso no pagamento pode suspender a execução dos serviços e, em planos mensais, a hospedagem e o funcionamento dos materiais entregues."
+    },
+    {
+      "titulo": "3. Prazos e colaboração do contratante",
+      "texto": "Os prazos de entrega contam a partir do pagamento e do recebimento de todo o material necessário (textos, logotipo, fotos, acessos e informações). Atrasos no envio desse material prorrogam os prazos na mesma proporção."
+    },
+    {
+      "titulo": "4. Ética e publicidade na advocacia",
+      "texto": "A CONTRATADA produz os materiais de acordo com as normas de publicidade da advocacia da OAB. O CONTRATANTE é o responsável final pelo conteúdo publicado em seu nome e deve revisar e aprovar o material antes da publicação."
+    },
+    {
+      "titulo": "5. Resultados",
+      "texto": "Os serviços são de meio, não de resultado. A CONTRATADA não garante posicionamento em buscadores, volume de contatos, número de clientes ou qualquer retorno financeiro específico."
+    },
+    {
+      "titulo": "6. Propriedade intelectual",
+      "texto": "Após a quitação integral do valor, o CONTRATANTE passa a deter os direitos de uso sobre os materiais criados exclusivamente para ele. Ferramentas, códigos-base, modelos e processos da CONTRATADA continuam sendo dela."
+    },
+    {
+      "titulo": "7. Confidencialidade e proteção de dados (LGPD)",
+      "texto": "As partes manterão sigilo sobre as informações trocadas. Os dados pessoais informados nesta página serão usados apenas para identificação, formalização do contrato, cobrança e comunicação sobre o serviço, conforme a Lei nº 13.709/2018."
+    },
+    {
+      "titulo": "8. Cancelamento",
+      "texto": "Em serviços de pagamento único, o cancelamento após o início da execução não gera reembolso do trabalho já realizado. Em serviços mensais, o cancelamento pode ser solicitado a qualquer momento com aviso prévio de 30 dias, sem multa."
+    },
+    {
+      "titulo": "9. Aceite eletrônico",
+      "texto": "O CONTRATANTE declara que leu e concorda com estes termos. O aceite eletrônico, registrado com data, hora e endereço IP, tem validade de assinatura do contrato."
+    },
+    {
+      "titulo": "10. Foro",
+      "texto": "Fica eleito o foro da comarca de Porto Alegre/RS para resolver qualquer questão decorrente deste contrato."
+    }
+  ],
+
+  "landing-page": {
+    "nome": "Landing page para advogados",
+    "preco": 65.00,
+    "cobranca": "mensal",
+    "prazo": "Entrega em até 7 dias úteis após o recebimento do material",
+    "descricao": "Uma página única, rápida e pensada para transformar visitantes em contatos pelo WhatsApp, com linguagem adequada às regras da OAB.",
+    "entregaveis": [
+      "Landing page responsiva (celular, tablet e computador)",
+      "Textos escritos de acordo com as normas de publicidade da OAB",
+      "Botão de WhatsApp e formulário de contato",
+      "Hospedagem e domínio configurados",
+      "Certificado SSL (cadeado de segurança)"
+    ],
+    "nao_inclui": [
+      "Suporte e manutenção (contratados à parte)",
+      "Gestão de tráfego pago e redes sociais"
+    ]
+  },
+
+  "site-institucional": {
+    "nome": "Site institucional",
+    "preco": 997.00,
+    "cobranca": "unico",
+    "prazo": "Entrega em até 15 dias úteis após o recebimento do material",
+    "descricao": "Site completo para o escritório, com páginas de áreas de atuação, sobre e contato, estruturado para ser encontrado no Google.",
+    "entregaveis": [
+      "Site com até 5 páginas, responsivo",
+      "Configuração básica de SEO",
+      "Integração com WhatsApp e Google Analytics",
+      "Hospedagem e domínio configurados",
+      "Treinamento rápido de uso"
+    ],
+    "nao_inclui": [
+      "Produção de vídeos e fotos",
+      "Gestão de tráfego pago"
+    ]
+  }
+}
