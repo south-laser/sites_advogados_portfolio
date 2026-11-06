@@ -1,0 +1,87 @@
+/* Identidade South Laser — cores e fontes tiradas do post de divulgação.
+   Para ajustar a marca, mexa só nestas variáveis. */
+:root{
+  --bg-top:#1e293b; --bg-mid:#2b254a; --bg-low:#3b1d63;
+  --card:#241d42; --card2:#1b1636;
+  --ink:#ffffff; --muted:#c7bfe0; --line:rgba(204,132,255,.24);
+  --magenta:#ad2881; --violet:#8a2dcc; --purple:#8d08be; --lilac:#cc84ff; --ok:#7ee8c0; --danger:#ff6b9a;
+  --grad:linear-gradient(90deg,#ad2881,#8a2dcc);
+  --grad-bar:linear-gradient(90deg,#98256b,#6e2cae);
+  --f-display:"Montserrat",system-ui,sans-serif;
+  --f-body:"Lexend","Montserrat",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{
+  margin:0;min-height:100vh;overflow-x:hidden;color:var(--ink);font:400 16px/1.65 var(--f-body);
+  background:
+    radial-gradient(900px 520px at 50% 105%,rgba(138,45,204,.38),transparent 65%),
+    linear-gradient(180deg,var(--bg-top) 0%,var(--bg-mid) 55%,var(--bg-low) 100%);
+  background-repeat:no-repeat;
+}
+/* grades de pontos, como no post */
+body::before,body::after{
+  content:"";position:fixed;width:200px;height:170px;pointer-events:none;z-index:0;opacity:.45;
+  background-image:radial-gradient(circle,rgba(255,255,255,.7) 2px,transparent 2.6px);background-size:32px 32px;
+}
+body::before{top:16px;left:8px}
+body::after{bottom:16px;right:8px}
+
+.wrap{position:relative;z-index:1;max-width:720px;margin:0 auto;padding:28px 20px 56px}
+.deco{position:absolute;top:18px;right:-26px;width:150px;height:auto;opacity:.55;pointer-events:none;z-index:0}
+
+.brand{display:flex;align-items:center;gap:12px;margin-bottom:34px}
+.brand svg{width:38px;height:auto}
+.brand b{font:800 16px var(--f-display);letter-spacing:.16em;color:#fff}
+
+h1,h2,h3,label,button{font-family:var(--f-body)}
+h1{font:800 clamp(26px,5.6vw,40px)/1.1 var(--f-display);text-transform:uppercase;letter-spacing:-.01em;margin:0 0 14px}
+h2{font:700 18px var(--f-display);margin:0 0 14px}
+h3{font:700 13px var(--f-display);letter-spacing:.06em;text-transform:uppercase;color:var(--lilac);margin:22px 0 6px}
+.lead{color:var(--muted);margin:0 0 26px;max-width:58ch}
+
+section{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;margin-bottom:18px}
+section::before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:var(--grad)}
+
+/* preço no formato dos "balões" do post */
+.price{display:flex;width:fit-content;max-width:100%;align-items:baseline;gap:10px;flex-wrap:wrap;padding:14px 22px;margin:4px 0 18px;border-radius:14px;background:var(--grad);box-shadow:0 10px 28px rgba(138,45,204,.35)}
+.price strong{font:800 30px var(--f-display);color:#fff}
+.price span{color:rgba(255,255,255,.88)}
+
+ul.ck,ul.no{list-style:none;margin:0;padding:0}
+ul.ck li,ul.no li{padding:6px 0 6px 30px;position:relative}
+ul.ck li::before{content:"";position:absolute;left:3px;top:14px;width:11px;height:11px;background:var(--lilac);clip-path:polygon(0 0,45% 0,100% 50%,45% 100%,0 100%,55% 50%)}
+ul.no li{color:var(--muted)}
+ul.no li::before{content:"×";position:absolute;left:4px;top:3px;color:var(--danger);font:700 19px var(--f-body)}
+
+.field{margin-bottom:16px}
+label{display:block;font-weight:500;font-size:14px;margin-bottom:6px;color:var(--muted)}
+input[type=text],input[type=tel]{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;font:400 16px var(--f-body);background:var(--card2);color:var(--ink)}
+input[type=text]::placeholder,input[type=tel]::placeholder{color:#8d84ad}
+input[type=text]:focus,input[type=tel]:focus{border-color:var(--lilac);box-shadow:0 0 0 3px rgba(204,132,255,.28);outline:none}
+button:focus-visible,summary:focus-visible,.terms:focus-visible,.aceite input:focus-visible{outline:3px solid var(--lilac);outline-offset:2px}
+
+.terms{max-height:260px;overflow:auto;border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--card2);font-size:15px;color:#ddd6f0}
+.terms h3{margin-top:16px;color:#fff;text-transform:none;letter-spacing:0;font:700 14px var(--f-body)}
+.terms h3:first-child{margin-top:0}
+.terms p{margin:4px 0}
+.aceite{display:flex;gap:12px;align-items:flex-start;margin:16px 0 0;font:400 15px/1.5 var(--f-body);color:var(--ink)}
+.aceite input{width:20px;height:20px;margin-top:3px;accent-color:var(--magenta);flex:none}
+
+button.go{width:100%;margin-top:20px;padding:16px;border:0;border-radius:12px;background:var(--grad);color:#fff;font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;box-shadow:0 10px 28px rgba(138,45,204,.4);transition:transform .15s,filter .15s}
+button.go:hover{filter:brightness(1.1);transform:translateY(-1px)}
+
+.err{border:1.5px solid var(--danger);background:rgba(255,107,154,.1);border-radius:12px;padding:12px 16px;margin-bottom:18px}
+.err ul{margin:0;padding-left:18px}
+
+.done{text-align:center;padding:40px 24px}
+.done .code{display:inline-block;margin-top:14px;padding:9px 18px;border-radius:10px;background:var(--grad-bar);font:700 14px var(--f-display);letter-spacing:.14em}
+.center{margin-inline:auto}
+.nomt{margin-top:0}
+
+/* barra de rodapé, como no post */
+.rodape{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:34px;padding:16px 24px;border-radius:16px;background:var(--grad-bar);font:500 15px var(--f-body)}
+.rodape span:first-child{font-weight:600}
+
+@media (max-width:480px){.deco{opacity:.3;width:96px;right:-8px;top:14px}.rodape{justify-content:center;text-align:center}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
