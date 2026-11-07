@@ -63,9 +63,9 @@
 
   "site-institucional": {
     "nome": "Site institucional",
-    "preco": 997.00,
+    "preco": 200.00,
     "cobranca": "unico",
-    "prazo": "Entrega em até 15 dias úteis após o recebimento do material",
+    "prazo": "Entrega em até 7 dias úteis após o recebimento do material",
     "descricao": "Site completo para o escritório, com páginas de áreas de atuação, sobre e contato, estruturado para ser encontrado no Google.",
     "entregaveis": [
       "Site com até 5 páginas, responsivo",
