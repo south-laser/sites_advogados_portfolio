@@ -16,6 +16,9 @@
  *
  * Variáveis de ambiente (opcionais):
  *   PORT=3000   HOST=127.0.0.1   TRUST_PROXY=1 (atrás de Nginx/Apache)
+ *
+ * E-mail: usa o módulo ./email (pasta email/ ao lado do server.js), que exporta
+ *   enviarEmail({ to, subject, html }).
  */
 
 const http = require('node:http');
@@ -216,6 +219,50 @@ async function gravaContrato(cpf, md, stamp) {
   return arquivo;
 }
 
+/* ---------- e-mail de boas-vindas ---------- */
+
+/** Carrega o módulo ./email sem derrubar o servidor se ele estiver com problema. */
+let enviarEmail = null;
+try {
+  const mod = require('./email');
+  enviarEmail = typeof mod === 'function' ? mod : mod.enviarEmail;
+  if (typeof enviarEmail !== 'function') throw new Error('./email não exporta uma função de envio');
+} catch (err) {
+  enviarEmail = null;
+  console.error('Módulo ./email indisponível, e-mails de boas-vindas desativados:', err.message);
+}
+
+async function enviarBoasVindas({ nome, email, plano, tipo, codigo }) {
+  if (!enviarEmail) throw new Error('módulo ./email indisponível');
+
+  const primeiroNome = nome.split(' ')[0];
+
+  const prazoLinha = plano.prazo
+    ? `<tr><td style="padding:10px 0;border-top:1px solid #3a2f5f;color:#cc84ff;font-weight:700;">Prazo</td>` +
+      `<td style="padding:10px 0;border-top:1px solid #3a2f5f;color:#ffffff;">${e(plano.prazo)}</td></tr>`
+    : '';
+
+  const html = preencher(await lerView('email-boas-vindas.html'), {
+    primeiro_nome: primeiroNome,
+    plano_nome: plano.nome || tipo,
+    preco: brl(plano.preco),
+    cobranca: textoCobranca(plano.cobranca),
+    prazo_linha: prazoLinha,
+    codigo,
+  });
+
+  const resultado = await enviarEmail({
+    to: email,
+    subject: `Boas-vindas à South Laser, ${primeiroNome.slice(0, 40)}!`,
+    html,
+  });
+
+  // se o módulo devolver um objeto de erro em vez de lançar exceção
+  if (resultado && (resultado.success === false || resultado.sucesso === false || resultado.ok === false || resultado.error || resultado.erro)) {
+    throw new Error(`o módulo de e-mail informou falha: ${JSON.stringify(resultado).slice(0, 300)}`);
+  }
+}
+
 /* ---------- servidor ---------- */
 
 const CABECALHOS = {
@@ -302,7 +349,7 @@ async function tratar(req, res) {
     old = { nome, email, telefone: String(form.get('telefone') ?? ''), cpf: String(form.get('cpf') ?? '') };
 
     if (nome.length < 5 || nome.length > 120 || !nome.includes(' ')) erros.push('Informe seu nome completo.');
-    if (email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) erros.push('Informe um e-mail válido.');
+    if (email.length > 254 || !/^[^\s@<>,;:\"()[\]\\]+@[^\s@<>,;:\"()[\]\\]+\.[^\s@<>,;:\"()[\]\\]{2,}$/.test(email)) erros.push('Informe um e-mail válido.');
     if (tel.length !== 10 && tel.length !== 11) erros.push('Informe um telefone válido com DDD.');
     if (!cpfValido(cpf)) erros.push('O CPF informado não é válido.');
     if (!form.get('aceite')) erros.push('Para continuar, aceite os termos e condições.');
@@ -323,6 +370,11 @@ async function tratar(req, res) {
           .digest('hex')
           .slice(0, 10)
           .toUpperCase();
+
+        // e-mail em segundo plano: se falhar, o contrato continua válido e o erro vai para o log
+        enviarBoasVindas({ nome, email, plano, tipo, codigo }).catch((err) =>
+          console.error(`Falha ao enviar e-mail de boas-vindas (contrato ${path.basename(arquivo)}):`, err.message)
+        );
 
         csrf = crypto.randomBytes(32).toString('hex'); // rotaciona o token
         const html = await pagina('sucesso.html', {
