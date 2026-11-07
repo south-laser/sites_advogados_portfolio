@@ -224,7 +224,7 @@ async function gravaContrato(cpf, md, stamp) {
 /** Carrega o módulo ./email sem derrubar o servidor se ele estiver com problema. */
 let enviarEmail = null;
 try {
-  const mod = require('./email');
+  const mod = require('./email/email');
   enviarEmail = typeof mod === 'function' ? mod : mod.enviarEmail;
   if (typeof enviarEmail !== 'function') throw new Error('./email não exporta uma função de envio');
 } catch (err) {
