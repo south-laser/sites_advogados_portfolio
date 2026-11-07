@@ -17,7 +17,10 @@ const transporter = nodemailer.createTransport({
 async function enviarEmail({ to, subject, html, text }) {
     try {
         const info = await transporter.sendMail({
-            from: process.env.MAIL_FROM,
+            from: {
+                name: 'South Laser',
+                address: 'contato@southlaser.com.br'
+            },
             to,
             subject,
             html,
